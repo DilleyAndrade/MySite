@@ -1,16 +1,24 @@
 'use client'
 import { darkModeContext, languageContext } from "@/context/context"
-import { GithubLogo, InstagramLogo, LinkedinLogo, Moon, Sun, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr"
+import { 
+  GithubLogo, 
+  InstagramLogo, 
+  LinkedinLogo, 
+  Moon, 
+  Sun, 
+  TelegramLogo, 
+  WhatsappLogo 
+} from "@phosphor-icons/react/dist/ssr"
 import Image from "next/image"
 import { useContext, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
-export default function Header() {
+export default function HeaderMobile() {
   const {darkMode, setDarkMode} = useContext<any>(darkModeContext)
   const {isEnglish, setIsEnglish} = useContext<any>(languageContext)
-  const [menuMobileIsOpen, setMenuMobileIsOpen] = useState<any>(true)
+  const [menuMobileIsOpen, setMenuMobileIsOpen] = useState<any>(false)
   return (
-    <header>
+    <header className="lg:hidden">
       <div className={`flex fixed top-0 w-full justify-between items-center 
         px-6 py-4 border-b-4 border-main-color
         ${darkMode === true 
@@ -261,14 +269,17 @@ export default function Header() {
             {/* Opções Copy */}
             <div>
               <h6 
-                className={` text-center mt-4
+                className={` text-center mt-4 w-64
                   ${darkMode === true 
                     ? 'text-menu-light' 
                     : 'text-menu-dark'
                   }`
                 }
               >
-                2024© Todos os direitos reservados. <br /> Desenvolvido por Dilley Andrade
+                {isEnglish === true 
+                  ? '2024© All rights reserved. Developed by Dilley Andrade'
+                  : '2024© Todos os direitos reservados. Desenvolvido por Dilley Andrade'
+                }
               </h6>
             </div>
           </motion.div>

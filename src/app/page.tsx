@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { darkModeContext, languageContext } from "@/context/context";
-import Header from "@/components/Header";
+import HeaderMobile from "@/components/HeaderMobile";
+import HeaderDesktop from "@/components/HeaderDesktop";
 
 export default function Home() {
 
@@ -14,7 +15,8 @@ export default function Home() {
     <darkModeContext.Provider value={{darkMode, setDarkMode}}>
       <languageContext.Provider value={{isEnglish, setIsEnglish}}>
         <div className={`${darkMode === true ? "bg-bg-dark" : "bg-bg-light"}`}>
-          <Header />
+          <HeaderMobile/>
+          <HeaderDesktop />
         </div>
       </languageContext.Provider>
     </darkModeContext.Provider>
