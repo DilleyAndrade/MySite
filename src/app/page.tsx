@@ -4,6 +4,7 @@ import { useState } from "react";
 import { darkModeContext, languageContext } from "@/context/context";
 import HeaderMobile from "@/components/HeaderMobile";
 import HeaderDesktop from "@/components/HeaderDesktop";
+import HomePage from "@/components/HomePage";
 
 export default function Home() {
 
@@ -14,10 +15,13 @@ export default function Home() {
   return (
     <darkModeContext.Provider value={{darkMode, setDarkMode}}>
       <languageContext.Provider value={{isEnglish, setIsEnglish}}>
-        <div className={`${darkMode === true ? "bg-bg-dark" : "bg-bg-light"}`}>
-          <HeaderMobile/>
+        <header>
+          <HeaderMobile />
           <HeaderDesktop />
-        </div>
+        </header>
+        <main className={`${darkMode ? "bg-bg-dark" : "bg-bg-light"}`}>
+          <HomePage />
+        </main>
       </languageContext.Provider>
     </darkModeContext.Provider>
   );

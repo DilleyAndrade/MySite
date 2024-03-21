@@ -19,47 +19,24 @@ export default function HeaderMobile() {
   const [menuMobileIsOpen, setMenuMobileIsOpen] = useState<any>(false)
   return (
     <header className="lg:hidden">
-      <div className={`flex fixed top-0 w-full justify-between items-center 
-        px-6 py-4 border-b-4 border-main-color
-        ${darkMode === true 
-          ? 'bg-menu-dark'
-          : 'bg-menu-light'
-        }`
-      }>
+      <div 
+        className={`flex fixed top-0 w-full justify-between items-center z-30
+          px-6 py-4 border-b-4 border-main-color bg-opacity-90
+          ${darkMode ? 'bg-menu-dark': 'bg-menu-light'}
+        `}
+      >
         {/* Botão menu Mobile */}
         <div className="flex items-center gap-3" >
           <button 
             onClick={() => {setMenuMobileIsOpen(true)}}
             className="flex flex-col gap-2"
           >
-            <div className={`h-1 w-8 rounded-full  duration-300
-              ${darkMode === true 
-                ? 'bg-white' 
-                : 'bg-gray-900'
-              }`
-            }></div>
-            <div className={`h-1 w-8 rounded-full  duration-300
-              ${darkMode === true 
-                ? 'bg-white' 
-                : 'bg-gray-900'
-              }`
-            }></div>
-            <div className={`h-1 w-8 rounded-full  duration-300
-              ${darkMode === true 
-                ? 'bg-white' 
-                : 'bg-gray-900'
-              }`
-            }></div>
+            <div className={`h-1 w-8 rounded-full  duration-300 ${darkMode ? 'bg-white' : 'bg-gray-900'}`}></div>
+            <div className={`h-1 w-8 rounded-full  duration-300 ${darkMode ? 'bg-white' : 'bg-gray-900'}`}></div>
+            <div className={`h-1 w-8 rounded-full  duration-300 ${darkMode ? 'bg-white' : 'bg-gray-900'}`}></div>
           </button>
 
-          <h2 
-            className={`
-              ${darkMode === true 
-                ? 'text-menu-light' 
-                : 'text-menu-dark'
-              }`
-            }
-          >
+          <h2 className={` ${darkMode ? 'text-menu-light' : 'text-menu-dark' }`}>
             Menu
           </h2>
         </div>
@@ -83,17 +60,18 @@ export default function HeaderMobile() {
           </div>
           {/* Controle do tema */}
           <div className={`w-16 h-8 rounded-full flex 
-            ${darkMode === true 
+            ${darkMode 
               ? 'bg-white justify-start'
               : 'bg-gray-900 justify-end'} duration-300`
             }
           >
             <button
               className={`h-8 w-8 rounded-full flex items-center justify-center
-              hover:scale-90 duration-300
-              ${darkMode === true 
-                ? 'bg-image-light'
-                : 'bg-image-dark'}`
+                hover:scale-90 duration-300
+                ${darkMode
+                  ? 'bg-image-light'
+                  : 'bg-image-dark'
+                }`
               }
               onClick={()=> {
                 if(darkMode === true) setDarkMode(false)
@@ -101,7 +79,7 @@ export default function HeaderMobile() {
               }}
             >
               <div>
-                {darkMode === true ? <Sun size={20} /> : <Moon size={20} color="#fff"/> }
+                {darkMode ? <Sun size={20} /> : <Moon size={20} color="#fff"/> }
               </div>
               
             </button>
@@ -117,8 +95,8 @@ export default function HeaderMobile() {
             animate={{x:0}}
             exit={{x:-1050}}
             transition={{ duration: 0.7 }}
-            className={`flex flex-col items-center h-screen w-10/12 fixed z-20
-              ${darkMode === true 
+            className={`flex flex-col items-center h-screen w-10/12 fixed z-50
+              ${darkMode 
                 ? 'bg-menu-dark' 
                 : 'bg-menu-light'
               }`
@@ -130,7 +108,7 @@ export default function HeaderMobile() {
                 onClick={() => {setMenuMobileIsOpen(false)}}
                 className={`font-black text-center text-3xl w-10 h-10 
                   rounded-bl-2xl 
-                  ${darkMode === true 
+                  ${darkMode 
                     ? 'text-menu-light bg-image-dark' 
                     : 'text-menu-dark bg-image-light'}
                   `}
@@ -149,7 +127,7 @@ export default function HeaderMobile() {
               />
               <h2 
                 className={`font-bold 
-                  ${darkMode === true 
+                  ${darkMode 
                     ? 'text-menu-light' 
                     : 'text-menu-dark'
                   }`
@@ -158,12 +136,12 @@ export default function HeaderMobile() {
                 Dilley Andrade
               </h2>
             </div>
-            <div className="h-1 w-full my-4 bg-image-light"></div>
+            <div className="border-t-2 w-full my-10 border-image-light"></div>
             {/* Opções mobile Navegation */}
             <div>
               <ul 
                 className={`text-xl flex flex-col gap-4 items-center
-                  ${darkMode === true 
+                  ${darkMode 
                     ? 'text-menu-light' 
                     : 'text-menu-dark'
                   }
@@ -175,7 +153,7 @@ export default function HeaderMobile() {
                     className="hover:text-main-color duration-300" 
                     onClick={() => {setMenuMobileIsOpen(false)}}
                   >
-                    {isEnglish === true ? 'Home' : 'Início'}
+                    {isEnglish ? 'Home' : 'Início'}
                   </a>
                 </li>
                 <li>
@@ -184,7 +162,7 @@ export default function HeaderMobile() {
                     className="hover:text-main-color duration-300" 
                     onClick={() => {setMenuMobileIsOpen(false)}}
                   >
-                    {isEnglish === true ? 'About Me' : 'Sobre mim'}
+                    {isEnglish ? 'About Me' : 'Sobre mim'}
                   </a>
                 </li>
                 <li>
@@ -202,7 +180,7 @@ export default function HeaderMobile() {
                     className="hover:text-main-color duration-300" 
                     onClick={() => {setMenuMobileIsOpen(false)}}
                   >
-                    {isEnglish === true ? 'Projects' : 'Projetos'}
+                    {isEnglish ? 'Projects' : 'Projetos'}
                   </a>
                 </li>
                 <li>
@@ -211,12 +189,12 @@ export default function HeaderMobile() {
                     className="hover:text-main-color duration-300" 
                     onClick={() => {setMenuMobileIsOpen(false)}}
                   >
-                    {isEnglish === true ? 'Contact' : 'contato'}
+                    {isEnglish ? 'Contact' : 'contato'}
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="h-1 w-full my-4 bg-image-light"></div>
+            <div className="border-t-2 w-full my-10 border-image-light"></div>
 
             {/* Opções Redes sociais */}
             <div className="flex gap-4">
@@ -224,7 +202,7 @@ export default function HeaderMobile() {
                 <LinkedinLogo 
                   size={30} 
                   weight="fill"
-                  className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+                  className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                     hover:scale-110 duration-300 hover:text-main-color`
                   }
                 />
@@ -233,7 +211,7 @@ export default function HeaderMobile() {
                 <InstagramLogo 
                   size={30} 
                   weight="fill"
-                  className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+                  className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                     hover:scale-110 duration-300 hover:text-main-color`
                   }
                 />
@@ -242,7 +220,7 @@ export default function HeaderMobile() {
                 <GithubLogo 
                   size={30} 
                   weight="fill"
-                  className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+                  className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                     hover:scale-110 duration-300 hover:text-main-color`
                   }
                 />
@@ -251,7 +229,7 @@ export default function HeaderMobile() {
                 <WhatsappLogo 
                   size={30} 
                   weight="fill"
-                  className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+                  className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                     hover:scale-110 duration-300 hover:text-main-color`
                   }
                 />
@@ -260,7 +238,7 @@ export default function HeaderMobile() {
                 <TelegramLogo 
                   size={30} 
                   weight="fill"
-                  className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+                  className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                     hover:scale-110 duration-300 hover:text-main-color`
                   }
                 />
@@ -270,13 +248,13 @@ export default function HeaderMobile() {
             <div>
               <h6 
                 className={` text-center mt-4 w-64
-                  ${darkMode === true 
+                  ${darkMode 
                     ? 'text-menu-light' 
                     : 'text-menu-dark'
                   }`
                 }
               >
-                {isEnglish === true 
+                {isEnglish 
                   ? '2024© All rights reserved. Developed by Dilley Andrade'
                   : '2024© Todos os direitos reservados. Desenvolvido por Dilley Andrade'
                 }
@@ -285,7 +263,7 @@ export default function HeaderMobile() {
           </motion.div>
 
           <motion.div
-            className="bg-main-color h-screen w-11/12 fixed z-10"
+            className="bg-main-color h-screen w-11/12 fixed z-40"
             initial={{x:-1050}}
             animate={{x:0}}
             exit={{x:-1050}}
@@ -294,7 +272,7 @@ export default function HeaderMobile() {
           </motion.div>
 
           <motion.div
-            className="bg-menu-dark bg-opacity-90 h-screen w-full fixed"
+            className="bg-menu-dark bg-opacity-90 h-screen w-full fixed z-30"
             initial={{x:-1050}}
             animate={{x:0}}
             exit={{x:-1050}}

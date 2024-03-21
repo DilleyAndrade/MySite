@@ -1,7 +1,13 @@
 import { darkModeContext, languageContext } from "@/context/context"
-import { GithubLogo, InstagramLogo, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr"
+import { 
+  GithubLogo, 
+  InstagramLogo, 
+  LinkedinLogo, 
+  TelegramLogo, 
+  WhatsappLogo 
+} from "@phosphor-icons/react/dist/ssr"
 import { useContext } from "react"
-import { motion, spring } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function HeaderDesktop() {
   const {darkMode} = useContext<any>(darkModeContext)
@@ -13,16 +19,15 @@ export default function HeaderDesktop() {
       animate={{x:-0}}
       transition={{duration: .2}}
       className={`hidden lg:flex flex-col items-center justify-between w-64 fixed h-screen p-6
-        ${darkMode === true 
-          ? 'bg-menu-dark' : 'bg-menu-light'
-        } 
-      `}>
+        ${darkMode ? 'bg-menu-dark' : 'bg-menu-light'} 
+      `}
+    >
       <div className="w-28 h-28 rounded-xl bg-image-light"></div>
       {/* Opções mobile Navegation */}
       <div>
         <ul
           className={`text-3xl flex w-full flex-col gap-3 text-center
-            ${darkMode === true 
+            ${darkMode 
               ? 'text-menu-light' 
               : 'text-menu-dark'
             }
@@ -38,7 +43,7 @@ export default function HeaderDesktop() {
               href="#home" 
               className="hover:text-main-color duration-300" 
             >
-              {isEnglish === true ? 'Home' : 'Início'}
+              {isEnglish ? 'Home' : 'Início'}
             </a>
           </motion.li>
           <motion.li
@@ -51,7 +56,7 @@ export default function HeaderDesktop() {
               href="#aboutMe" 
               className="hover:text-main-color duration-300" 
             >
-              {isEnglish === true ? 'About Me' : 'Sobre mim'}
+              {isEnglish ? 'About Me' : 'Sobre mim'}
             </a>
           </motion.li>
           <motion.li 
@@ -77,7 +82,7 @@ export default function HeaderDesktop() {
               href="#projects" 
               className="hover:text-main-color duration-300" 
             >
-              {isEnglish === true ? 'Projects' : 'Projetos'}
+              {isEnglish ? 'Projects' : 'Projetos'}
             </a>
           </motion.li>
           <motion.li
@@ -90,7 +95,7 @@ export default function HeaderDesktop() {
               href="#contact" 
               className="hover:text-main-color duration-300" 
             >
-              {isEnglish === true ? 'Contact' : 'contato'}
+              {isEnglish ? 'Contact' : 'contato'}
             </a>
           </motion.li>
         </ul>
@@ -103,7 +108,7 @@ export default function HeaderDesktop() {
             <LinkedinLogo 
               size={30} 
               weight="fill"
-              className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+              className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                 hover:scale-110 duration-300 hover:text-main-color`
               }
             />
@@ -112,7 +117,7 @@ export default function HeaderDesktop() {
             <InstagramLogo 
               size={30} 
               weight="fill"
-              className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+              className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                 hover:scale-110 duration-300 hover:text-main-color`
               }
             />
@@ -121,7 +126,7 @@ export default function HeaderDesktop() {
             <GithubLogo 
               size={30} 
               weight="fill"
-              className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+              className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                 hover:scale-110 duration-300 hover:text-main-color`
               }
             />
@@ -130,7 +135,7 @@ export default function HeaderDesktop() {
             <WhatsappLogo 
               size={30} 
               weight="fill"
-              className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+              className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                 hover:scale-110 duration-300 hover:text-main-color`
               }
             />
@@ -139,7 +144,7 @@ export default function HeaderDesktop() {
             <TelegramLogo 
               size={30} 
               weight="fill"
-              className={`${darkMode === true ? 'text-menu-light' : 'text-menu-dark'} 
+              className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'} 
                 hover:scale-110 duration-300 hover:text-main-color`
               }
             />
@@ -148,14 +153,8 @@ export default function HeaderDesktop() {
         {/* Opções Copy */}
         <div>
           <h6 
-            className={`text-center mt-4 text-sm
-              ${darkMode === true 
-                ? 'text-menu-light' 
-                : 'text-menu-dark'
-              }`
-            }
-          >
-            {isEnglish === true 
+            className={`text-center mt-4 text-sm ${darkMode ? 'text-menu-light' : 'text-menu-dark'}`}>
+            {isEnglish 
               ? '2024© All rights reserved. Developed by Dilley Andrade'
               : '2024© Todos os direitos reservados. Desenvolvido por Dilley Andrade'
             }
