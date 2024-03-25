@@ -18,12 +18,12 @@ export default function HeaderDesktop() {
       initial={{x:-300}}
       animate={{x:-0}}
       transition={{duration: .2}}
-      className={`hidden lg:flex flex-col items-center justify-between w-64 fixed h-screen p-6
+      className={`hidden lg:flex flex-col items-center justify-between w-64 fixed h-screen p-6 z-50
         ${darkMode ? 'bg-menu-dark' : 'bg-menu-light'} 
       `}
     >
       <div className="w-28 h-28 rounded-xl bg-image-light"></div>
-      {/* Opções mobile Navegation */}
+      {/* Opções Desktop Navegation */}
       <div>
         <ul
           className={`text-3xl flex w-full flex-col gap-3 text-center
@@ -37,7 +37,7 @@ export default function HeaderDesktop() {
             initial={{x: -300, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: .3}}
-            className="border-t-2 w-full pt-3 border-image-light"
+            className="border-t-2 w-full pt-3 border-gray-400"
           >
             <a 
               href="#home" 
@@ -50,7 +50,7 @@ export default function HeaderDesktop() {
             initial={{x: -300, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: .4}}
-            className="border-t-2 w-full pt-3 border-image-light"
+            className="border-t-2 w-full pt-3 border-gray-400"
           >
             <a 
               href="#aboutMe" 
@@ -63,7 +63,7 @@ export default function HeaderDesktop() {
             initial={{x: -300, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: .4}}
-            className="border-t-2 w-full pt-3 border-image-light"
+            className="border-t-2 w-full pt-3 border-gray-400"
           >
             <a 
               href="#skills" 
@@ -76,7 +76,7 @@ export default function HeaderDesktop() {
             initial={{x: -300, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: .5}}
-            className="border-t-2 w-full pt-3 border-image-light"
+            className="border-t-2 w-full pt-3 border-gray-400"
           >
             <a 
               href="#projects" 
@@ -89,7 +89,7 @@ export default function HeaderDesktop() {
             initial={{x: -300, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: .7}}
-            className="border-y-2 w-full py-3 border-image-light"
+            className="border-y-2 w-full py-3 border-gray-400"
           >
             <a 
               href="#contact" 
@@ -100,11 +100,14 @@ export default function HeaderDesktop() {
           </motion.li>
         </ul>
       </div>
-      
       <div>
         {/* Opções Redes sociais */}
         <div className="flex gap-4">
-          <a href="https://www.linkedin.com/in/dilley-andrade/" target="_blank">
+          <a 
+            href="https://www.linkedin.com/in/dilley-andrade/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LinkedinLogo 
               size={30} 
               weight="fill"
@@ -113,7 +116,11 @@ export default function HeaderDesktop() {
               }
             />
           </a>
-          <a href="https://www.instagram.com/dilleyandrade/" target="_blank">
+          <a 
+            href="https://www.instagram.com/dilleyandrade/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <InstagramLogo 
               size={30} 
               weight="fill"
@@ -122,7 +129,11 @@ export default function HeaderDesktop() {
               }
             />
           </a>
-          <a href="https://github.com/DilleyAndrade" target="_blank">
+          <a 
+            href="https://github.com/DilleyAndrade" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GithubLogo 
               size={30} 
               weight="fill"
@@ -131,7 +142,11 @@ export default function HeaderDesktop() {
               }
             />
           </a>
-          <a href="https://api.whatsapp.com/send?phone=5581986632609" target="_blank">
+          <a 
+            href="https://api.whatsapp.com/send?phone=5581986632609" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <WhatsappLogo 
               size={30} 
               weight="fill"
@@ -140,7 +155,11 @@ export default function HeaderDesktop() {
               }
             />
           </a>
-          <a href="https://t.me/DilleyAndrade" target="_blank">
+          <a 
+            href="https://t.me/DilleyAndrade" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <TelegramLogo 
               size={30} 
               weight="fill"

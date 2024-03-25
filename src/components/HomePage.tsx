@@ -1,5 +1,6 @@
 import { darkModeContext, languageContext } from '@/context/context'
 import { Moon, Sun } from '@phosphor-icons/react/dist/ssr'
+import { motion } from'framer-motion'
 import Image from 'next/image'
 import React, { useContext } from 'react'
 import Button from './Button'
@@ -8,17 +9,20 @@ export default function HomePage() {
   const {darkMode, setDarkMode} = useContext<any>(darkModeContext)
   const {isEnglish,  setIsEnglish} = useContext<any>(languageContext)
   return (
-    <div id='home' className="flex flex-col md:flex-row items-stretch justify-center  lg:ml-64">
+    <div id='home' className="flex flex-col md:flex-row items-stretch justify-center duration-300">
       {/* Nome e imagem Dilley Andrade */}
-      <div 
-        className={` flex w-full md:w-6/12 justify-center pt-20 
+      <motion.div
+        initial={{x: -700, opacity: 0}}
+        animate={{x: 0, opacity: 1}}
+        transition={{duration: .7}}
+        className={` flex w-full md:w-5/12 justify-center pt-20 lg:z-40 
           ${darkMode 
             ? 'bg-image-dark' 
             : 'bg-image-light'
           }`
         }
       >
-        <div className='flex justify-center relative w-full box-content'>
+        <div className='flex justify-center items-center relative w-full box-content'>
           <Image 
             className='w-96 lg:w-auto'
             src="/myPhoto.png" 
@@ -41,10 +45,15 @@ export default function HomePage() {
           </div>
         </div>
         
-      </div>
+      </motion.div>
 
       {/* Frase inicial controles de cor e idioma */}
-      <div className='flex flex-col justify-between items-center md:items-start w-full h-auto  md:w-6/12  md:pb-0 px-6 md:px-4 lg:pt-6  pt-20 '>
+      <motion.div 
+        initial={{x: -1500, opacity: 0}}
+        animate={{x: 0, opacity: 1}}
+        transition={{duration: 1}}
+        className='flex flex-col justify-between items-center md:items-start w-full h-auto  md:w-7/12  md:pb-0 px-6 md:px-4 lg:pt-6  pt-6 lg:z-30'
+      >
         <div className='hidden w-full lg:flex justify-end gap-3'>
            {/* Controle do idioma */}
            <div className="flex gap-3">
@@ -108,7 +117,7 @@ export default function HomePage() {
         </div>
         <Button />
         <div className="border-t-2 w-full mt-10 border-image-light"></div>
-      </div>
+      </motion.div>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const config: Config = {
         "menu-dark": "#18191A",
         "menu-light": "#FFFFFF",
         "main-color": "#0866FF"
-      }
+      },
     },
   },
   plugins: [],

@@ -198,7 +198,11 @@ export default function HeaderMobile() {
 
             {/* Opções Redes sociais */}
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/dilley-andrade/" target="_blank">
+              <a 
+                href="https://www.linkedin.com/in/dilley-andrade/" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <LinkedinLogo 
                   size={30} 
                   weight="fill"
@@ -207,7 +211,11 @@ export default function HeaderMobile() {
                   }
                 />
               </a>
-              <a href="https://www.instagram.com/dilleyandrade/" target="_blank">
+              <a 
+                href="https://www.instagram.com/dilleyandrade/" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InstagramLogo 
                   size={30} 
                   weight="fill"
@@ -216,7 +224,11 @@ export default function HeaderMobile() {
                   }
                 />
               </a>
-              <a href="https://github.com/DilleyAndrade" target="_blank">
+              <a 
+                href="https://github.com/DilleyAndrade" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GithubLogo 
                   size={30} 
                   weight="fill"
@@ -225,7 +237,11 @@ export default function HeaderMobile() {
                   }
                 />
               </a>
-              <a href="https://api.whatsapp.com/send?phone=5581986632609" target="_blank">
+              <a 
+                href="https://api.whatsapp.com/send?phone=5581986632609" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <WhatsappLogo 
                   size={30} 
                   weight="fill"
@@ -234,7 +250,11 @@ export default function HeaderMobile() {
                   }
                 />
               </a>
-              <a href="https://t.me/DilleyAndrade" target="_blank">
+              <a 
+                href="https://t.me/DilleyAndrade" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <TelegramLogo 
                   size={30} 
                   weight="fill"
