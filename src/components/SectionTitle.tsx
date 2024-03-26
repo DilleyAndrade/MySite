@@ -3,8 +3,8 @@ import { useContext } from "react"
 import { motion } from 'framer-motion'
 
 interface SectionTitleProps {
-  sectionTitle: String
-  sectionDescription: String
+  sectionTitle?: String
+  sectionDescription?: String
 }
 
 export default function SectionTitle({sectionTitle, sectionDescription}:SectionTitleProps) {

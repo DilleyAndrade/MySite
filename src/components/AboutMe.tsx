@@ -21,15 +21,30 @@ export default function AboutMe() {
           transition={{duration: .6}}
           className="flex flex-col gap-3 items-center text-center justify-center md:items-start md:text-start max-w-80 xl:max-w-[600px]"
         >
-          <h2 className="text-main-color text-2xl">Olá,</h2>
-          <h2 className="text-main-color text-5xl font-bold">Eu sou Dilley Andrade,</h2>
+          <h2 className="text-main-color text-2xl">
+            {isEnglish ? 'Hello,' : 'Olá,'}
+          </h2>
+          <h2 className="text-main-color text-5xl font-bold">
+            {isEnglish ? 'I am Dilley Andrade' : 'Eu sou Dilley Andrade,'}
+          </h2>
           <p className={`${darkMode ? 'text-menu-light' : 'text-menu-dark'}`}>
-            um apaixonado desenvolvedor Fullstack com uma
-            profunda expertise em criar soluções web inovadoras e eficientes. 
-            Com uma sólida formação em tecnologias como React, Next.js, Node.js, 
-            JavaScript e TypeScript, tenho dedicado minha carreira ao 
-            desenvolvimento de aplicações web robustas e escaláveis que agregam 
-            valor aos usuários finais.
+            {isEnglish 
+              ? 
+                `A passionate Fullstack developer with a
+                deep expertise in creating innovative and efficient web solutions.
+                With a solid background in technologies such as React, Next.js, Node.js,
+                JavaScript and TypeScript, I have dedicated my career to
+                development of robust and scalable web applications that add
+                value to end users.`
+              :
+                `Um apaixonado desenvolvedor Fullstack com uma
+                profunda expertise em criar soluções web inovadoras e eficientes. 
+                Com uma sólida formação em tecnologias como React, Next.js, Node.js, 
+                JavaScript e TypeScript, tenho dedicado minha carreira ao 
+                desenvolvimento de aplicações web robustas e escaláveis que agregam 
+                valor aos usuários finais.`
+            }
+            
           </p>
           <div className="flex flex-col md:flex-row gap-3">
             <a
